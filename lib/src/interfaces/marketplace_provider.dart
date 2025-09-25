@@ -1,3 +1,5 @@
+import '../models/nft_listing.dart';
+import '../models/nft_offer.dart';
 import '../core/yuku_types.dart';
 
 /// Abstract interface for marketplace operations across different blockchains
@@ -23,158 +25,113 @@ abstract class MarketplaceProvider {
   /// Dispose the provider
   Future<void> dispose();
 
-  /// List NFT for sale
-  Future<String> listNFT({
-    required String tokenId,
+  /// Get active listings
+  Future<List<NFTListing>> getActiveListings({
+    String? contractAddress,
+    String? sellerAddress,
+    int? limit,
+    int? offset,
+  });
+
+  /// Get user listings
+  Future<List<NFTListing>> getUserListings(String userAddress);
+
+  /// Get specific listing
+  Future<NFTListing?> getListing(String listingId);
+
+  /// Create a new listing
+  Future<String> createListing({
+    required String nftId,
     required String contractAddress,
     required double price,
     required String currency,
-    int? duration,
+    required String sellerAddress,
+    int? expirationDays,
     Map<String, dynamic>? additionalParams,
   });
+
+  /// Cancel a listing
+  Future<bool> cancelListing(String listingId);
 
   /// Buy NFT from listing
-  Future<String> buyNFT(String listingId);
-
-  /// Cancel NFT listing
-  Future<String> cancelListing(String listingId);
-
-  /// Update NFT listing price
-  Future<String> updateListingPrice(String listingId, double newPrice);
-
-  /// Get NFT listings
-  Future<List<Map<String, dynamic>>> getListings({
-    String? contractAddress,
-    String? seller,
-    String? buyer,
-    double? minPrice,
-    double? maxPrice,
-    String? currency,
-    int? limit,
-    int? offset,
-  });
-
-  /// Get listing details
-  Future<Map<String, dynamic>?> getListingDetails(String listingId);
-
-  /// Get NFT offers
-  Future<List<Map<String, dynamic>>> getOffers({
-    String? tokenId,
-    String? contractAddress,
-    String? offerer,
-    double? minPrice,
-    double? maxPrice,
-    String? currency,
-    int? limit,
-    int? offset,
-  });
-
-  /// Make offer for NFT
-  Future<String> makeOffer({
-    required String tokenId,
-    required String contractAddress,
-    required double price,
-    required String currency,
-    int? duration,
+  Future<String> buyNFT({
+    required String listingId,
+    required String buyerAddress,
     Map<String, dynamic>? additionalParams,
   });
 
-  /// Accept offer
-  Future<String> acceptOffer(String offerId);
+  /// Get active offers
+  Future<List<NFTOffer>> getActiveOffers({
+    String? contractAddress,
+    String? nftId,
+    String? buyerAddress,
+    int? limit,
+    int? offset,
+  });
 
-  /// Reject offer
-  Future<String> rejectOffer(String offerId);
+  /// Get user offers
+  Future<List<NFTOffer>> getUserOffers(String userAddress);
 
-  /// Cancel offer
-  Future<String> cancelOffer(String offerId);
+  /// Get offers for specific NFT
+  Future<List<NFTOffer>> getNFTOffers(String nftId, String contractAddress);
 
-  /// Get offer details
-  Future<Map<String, dynamic>?> getOfferDetails(String offerId);
+  /// Get specific offer
+  Future<NFTOffer?> getOffer(String offerId);
+
+  /// Make an offer
+  Future<String> makeOffer({
+    required String nftId,
+    required String contractAddress,
+    required double amount,
+    required String currency,
+    required String buyerAddress,
+    int? expirationDays,
+    Map<String, dynamic>? additionalParams,
+  });
+
+  /// Accept an offer
+  Future<bool> acceptOffer(String offerId);
+
+  /// Reject an offer
+  Future<bool> rejectOffer(String offerId);
+
+  /// Cancel an offer
+  Future<bool> cancelOffer(String offerId);
+
+  /// Search listings
+  Future<List<NFTListing>> searchListings({
+    String? name,
+    String? description,
+    Map<String, dynamic>? attributes,
+    double? minPrice,
+    double? maxPrice,
+    String? currency,
+    String? contractAddress,
+    int? limit,
+    int? offset,
+  });
 
   /// Get marketplace statistics
-  Future<Map<String, dynamic>> getMarketplaceStats({
-    String? contractAddress,
-    String? currency,
-  });
+  Future<Map<String, dynamic>> getMarketplaceStats();
 
   /// Get collection statistics
   Future<Map<String, dynamic>> getCollectionStats(String contractAddress);
 
-  /// Get floor price for collection
-  Future<double?> getFloorPrice(String contractAddress);
-
-  /// Get average price for collection
-  Future<double?> getAveragePrice(String contractAddress);
-
-  /// Get total volume for collection
-  Future<double> getTotalVolume(String contractAddress);
-
-  /// Get recent sales
-  Future<List<Map<String, dynamic>>> getRecentSales({
-    String? contractAddress,
-    int? limit,
-    int? offset,
-  });
-
-  /// Search listings
-  Future<List<Map<String, dynamic>>> searchListings({
-    String? query,
-    String? contractAddress,
-    double? minPrice,
-    double? maxPrice,
-    String? currency,
-    Map<String, dynamic>? filters,
-    int? limit,
-    int? offset,
-  });
+  /// Get user activity
+  Future<Map<String, dynamic>> getUserActivity(String userAddress);
 
   /// Get supported currencies
   List<SupportedCurrency> getSupportedCurrencies();
 
+  /// Check if currency is supported
+  bool isCurrencySupported(String currency);
+
   /// Get marketplace fees
   Future<Map<String, double>> getMarketplaceFees();
 
-  /// Calculate marketplace fee for transaction
-  Future<double> calculateMarketplaceFee(double price);
-
-  /// Get royalty information
-  Future<Map<String, dynamic>> getRoyaltyInfo({
-    required String tokenId,
-    required String contractAddress,
+  /// Calculate fees for a transaction
+  Future<Map<String, double>> calculateFees({
+    required double price,
+    required String currency,
   });
-
-  /// Set royalty information
-  Future<String> setRoyaltyInfo({
-    required String contractAddress,
-    required double royaltyPercentage,
-    required String royaltyRecipient,
-  });
-
-  /// Get marketplace events
-  Stream<Map<String, dynamic>> getMarketplaceEvents({
-    String? contractAddress,
-    String? eventType,
-  });
-
-  /// Subscribe to marketplace events
-  Future<void> subscribeToEvents({
-    String? contractAddress,
-    String? eventType,
-    Function(Map<String, dynamic>)? onEvent,
-  });
-
-  /// Unsubscribe from marketplace events
-  Future<void> unsubscribeFromEvents();
-
-  /// Get marketplace configuration
-  Future<Map<String, dynamic>> getMarketplaceConfig();
-
-  /// Update marketplace configuration
-  Future<void> updateMarketplaceConfig(Map<String, dynamic> config);
-
-  /// Verify marketplace contract
-  Future<bool> verifyMarketplaceContract(String contractAddress);
-
-  /// Get marketplace health status
-  Future<Map<String, dynamic>> getHealthStatus();
 }

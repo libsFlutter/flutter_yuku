@@ -29,6 +29,11 @@ class MarketplaceOperationException extends YukuException {
   });
 }
 
+/// Exception for marketplace operations (alias)
+class MarketplaceException extends MarketplaceOperationException {
+  const MarketplaceException(super.message, {super.code, super.details});
+}
+
 /// Exception for network operations
 class NetworkException extends YukuException {
   const NetworkException(super.message, {super.code, super.details});
@@ -129,4 +134,9 @@ class UnsupportedOperationException extends YukuException {
     super.code,
     super.details,
   });
+}
+
+/// Exception for wallet not connected
+class WalletNotConnectedException extends WalletOperationException {
+  const WalletNotConnectedException(super.message, {super.code, super.details});
 }

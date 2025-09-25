@@ -11,6 +11,9 @@ export 'src/core/yuku_types.dart';
 // Models
 export 'src/models/nft.dart';
 export 'src/models/nft_metadata.dart';
+export 'src/models/nft_listing.dart';
+export 'src/models/nft_offer.dart';
+export 'src/models/transaction.dart';
 
 // Interfaces
 export 'src/interfaces/nft_provider.dart';
