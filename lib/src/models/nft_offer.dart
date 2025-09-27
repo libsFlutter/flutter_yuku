@@ -55,7 +55,8 @@ class NFTOffer extends Equatable {
   });
 
   /// Create NFTOffer from JSON
-  factory NFTOffer.fromJson(Map<String, dynamic> json) => _$NFTOfferFromJson(json);
+  factory NFTOffer.fromJson(Map<String, dynamic> json) =>
+      _$NFTOfferFromJson(json);
 
   /// Convert NFTOffer to JSON
   Map<String, dynamic> toJson() => _$NFTOfferToJson(this);

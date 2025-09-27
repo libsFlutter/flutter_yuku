@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2024-12-27
+
+### Added
+- Universal marketplace provider for aggregating multiple marketplace providers
+- Universal wallet provider for aggregating multiple wallet providers
+- Enhanced provider management system
+- Improved error handling with ProviderException
+- Better network configuration management
+
+### Changed
+- Updated provider interfaces for better extensibility
+- Improved exception handling across all providers
+- Enhanced type safety for blockchain operations
+
+### Fixed
+- Resolved linter errors and warnings
+- Fixed dependency management issues
+- Improved code quality and consistency
+
 ## [1.0.0] - 2024-01-01
 
 ### Added

@@ -63,7 +63,8 @@ class NFTListing extends Equatable {
   });
 
   /// Create NFTListing from JSON
-  factory NFTListing.fromJson(Map<String, dynamic> json) => _$NFTListingFromJson(json);
+  factory NFTListing.fromJson(Map<String, dynamic> json) =>
+      _$NFTListingFromJson(json);
 
   /// Convert NFTListing to JSON
   Map<String, dynamic> toJson() => _$NFTListingToJson(this);

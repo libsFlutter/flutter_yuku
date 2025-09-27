@@ -20,5 +20,9 @@ export 'src/interfaces/nft_provider.dart';
 export 'src/interfaces/wallet_provider.dart';
 export 'src/interfaces/marketplace_provider.dart';
 
+// Providers
+export 'src/providers/universal_marketplace_provider.dart';
+export 'src/providers/universal_wallet_provider.dart';
+
 // Utils
 export 'src/utils/yuku_utils.dart';

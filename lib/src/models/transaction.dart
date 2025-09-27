@@ -71,7 +71,8 @@ class Transaction extends Equatable {
   });
 
   /// Create Transaction from JSON
-  factory Transaction.fromJson(Map<String, dynamic> json) => _$TransactionFromJson(json);
+  factory Transaction.fromJson(Map<String, dynamic> json) =>
+      _$TransactionFromJson(json);
 
   /// Convert Transaction to JSON
   Map<String, dynamic> toJson() => _$TransactionToJson(this);
