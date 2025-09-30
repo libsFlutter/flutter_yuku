@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_yuku/flutter_yuku.dart';
+import 'package:flutter_yuku_universal/flutter_yuku_universal.dart';
 
 void main() {
   group('YukuClient Tests', () {
@@ -25,7 +25,7 @@ void main() {
     test('should validate Ethereum address', () {
       expect(
         YukuUtils.isValidEthereumAddress(
-          '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+          '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
         ),
         false, // This address doesn't pass validation
       );
@@ -51,7 +51,7 @@ void main() {
     });
 
     test('should format address', () {
-      final address = '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6';
+      final address = '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a';
       final formatted = YukuUtils.formatAddress(address);
       expect(formatted, '0x742d...d8b6'); // Correct formatted address
     });
@@ -254,11 +254,11 @@ void main() {
       final nft = NFT(
         id: '1',
         tokenId: '1',
-        contractAddress: '0x1234567890123456789012345678901234567890',
+        contractAddress: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
         network: BlockchainNetwork.ethereum,
         metadata: metadata,
-        owner: '0x4567890123456789012345678901234567890123',
-        creator: '0x7890123456789012345678901234567890123456',
+        owner: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
+        creator: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
         createdAt: DateTime.now(),
         updatedAt: DateTime.now(),
         status: 'active',

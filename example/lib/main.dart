@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_yuku/flutter_yuku.dart';
+import 'package:flutter_yuku_universal/flutter_yuku_universal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -158,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
-                'Ethereum: ${YukuUtils.isValidEthereumAddress("0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6")}',
+                'Ethereum: ${YukuUtils.isValidEthereumAddress("0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a")}',
               ),
               Text(
                 'Solana: ${YukuUtils.isValidSolanaAddress("9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM")}',

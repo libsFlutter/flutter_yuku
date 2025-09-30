@@ -50,7 +50,7 @@ class Currency {
   static const eth = SupportedCurrency(
     symbol: 'ETH',
     name: 'Ethereum',
-    contractAddress: '',
+    contractAddress: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
     decimals: 18,
     network: BlockchainNetwork.ethereum,
   );
@@ -74,7 +74,7 @@ class Currency {
   static const matic = SupportedCurrency(
     symbol: 'MATIC',
     name: 'Polygon',
-    contractAddress: '',
+    contractAddress: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
     decimals: 18,
     network: BlockchainNetwork.polygon,
   );
@@ -82,7 +82,7 @@ class Currency {
   static const bnb = SupportedCurrency(
     symbol: 'BNB',
     name: 'Binance Coin',
-    contractAddress: '',
+    contractAddress: '0xffcba0b4980eb2d2336bfdb1e5a0fc49c620908a',
     decimals: 18,
     network: BlockchainNetwork.bsc,
   );
