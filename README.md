@@ -1,7 +1,24 @@
 # Flutter Yuku
 
+<div align="center">
+
+### 🌍 [English](README.md) | [Русский](README_ru.md) | [ไทย](README_th.md) | [中文](README_cn.md)
+
 [![pub package](https://img.shields.io/pub/v/flutter_yuku.svg)](https://pub.dev/packages/flutter_yuku)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
+
+## 📱 Screenshots
+
+<div align="center">
+  <img src="screenshots/nft_yuku_1.png" width="200" />
+  <img src="screenshots/nft_yuku_2.png" width="200" />
+  <img src="screenshots/nft_yuku_3.png" width="200" />
+  <img src="screenshots/nft_yuku_4.png" width="200" />
+</div>
+
+---
 
 Universal Flutter library for blockchain operations across multiple networks. Flutter Yuku provides a unified interface for working with NFTs, wallets, and marketplace operations across different blockchain networks.
 

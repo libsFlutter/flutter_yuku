@@ -1,6 +1,6 @@
 name: flutter_yuku
 description: Universal Flutter library for blockchain operations across multiple networks
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/libsFlutter/flutter_yuku
 
 environment:
