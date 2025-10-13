@@ -152,3 +152,4 @@ class NFTMetadata extends Equatable {
     youtubeUrl,
   ];
 }
+

@@ -140,3 +140,4 @@ class UnsupportedOperationException extends YukuException {
 class WalletNotConnectedException extends WalletOperationException {
   const WalletNotConnectedException(super.message, {super.code, super.details});
 }
+

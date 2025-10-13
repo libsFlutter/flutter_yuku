@@ -229,3 +229,4 @@ class NFT extends Equatable {
     additionalProperties,
   ];
 }
+

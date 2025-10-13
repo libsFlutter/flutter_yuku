@@ -124,3 +124,4 @@ abstract class NFTProvider {
   /// Verify if a contract is valid for this provider
   Future<bool> isValidContract(String contractAddress);
 }
+

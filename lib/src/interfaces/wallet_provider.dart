@@ -144,3 +144,4 @@ abstract class WalletProvider {
   /// Verify mnemonic phrase
   bool verifyMnemonic(String mnemonic);
 }
+
