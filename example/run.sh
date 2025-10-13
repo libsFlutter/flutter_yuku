@@ -32,7 +32,8 @@ case $PLATFORM in
         ;;
     ios)
         echo "🍎 Running on iOS..."
-        flutter run -d ios
+        # Try to run on iPad first, fallback to default iOS simulator
+        flutter run -d D9C3394E-12AB-4E49-9460-2097DD053B64 || flutter run -d ios
         ;;
     web)
         echo "🌐 Running on Web..."
