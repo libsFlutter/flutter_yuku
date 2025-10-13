@@ -1,4 +1,4 @@
-import 'package:flutter_yuku_universal/flutter_yuku_universal.dart';
+import '../../flutter_yuku_universal.dart';
 import '../core/yuku_exceptions.dart';
 
 /// Universal wallet provider that aggregates multiple wallet providers

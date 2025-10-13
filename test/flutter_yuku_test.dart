@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_yuku_universal/flutter_yuku_universal.dart';
+import 'package:flutter_yuku/flutter_yuku_universal.dart';
 
 void main() {
   group('YukuClient Tests', () {
