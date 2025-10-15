@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.3] - 2025-01-15
+
+### Changed
+- Architecture refactoring: Made flutter_yuku the foundational base library
+- Removed dependencies on other packages to ensure flutter_yuku is standalone
+- Improved package organization and code distribution
+- Updated dependency versions for better compatibility
+
+### Fixed
+- Resolved circular dependencies between packages
+- Fixed import structure for better modularity
+- Cleaned up code duplication across packages
+
 ## [1.1.0] - 2024-12-27
 
 ### Added
